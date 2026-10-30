@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="Mobility Shield logo">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02040A"/>
+      <stop offset="50%" stop-color="#071224"/>
+      <stop offset="100%" stop-color="#0A1F3D"/>
+    </linearGradient>
+    <radialGradient id="glowBg" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#00F5D4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00F5D4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="100%" stop-color="#00BBF9"/>
+    </linearGradient>
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="squircle">
+      <path d="M 160 24 C 264 24, 336 96, 336 200 C 336 304, 264 376, 160 376 C 56 376, -16 304, -16 200 C -16 96, 56 24, 160 24 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(0, -20) scale(0.9)">
+    <g clip-path="url(#squircle)">
+      <rect x="-16" y="24" width="352" height="352" fill="url(#bg)"/>
+      <rect x="-16" y="24" width="352" height="352" fill="url(#glowBg)"/>
+    </g>
+    <g transform="translate(160 200)">
+      <path d="M 0 -105 L 88 -76 C 88 13, 59 88, 0 123 C -59 88, -88 13, -88 -76 Z"
+            fill="#071224" fill-opacity="0.85" stroke="url(#accent)" stroke-width="2" stroke-linejoin="round" filter="url(#softGlow)"/>
+      <line x1="-60" y1="0" x2="60" y2="0" stroke="url(#accent)" stroke-width="2" stroke-linecap="round" opacity="0.9" filter="url(#neon)"/>
+      <line x1="-40" y1="-19" x2="27" y2="-19" stroke="#00F5D4" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+      <line x1="-27" y1="19" x2="40" y2="19" stroke="#00BBF9" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+      <g transform="translate(35 0)" filter="url(#neon)">
+        <path d="M -12 -15 L 12 0 L -12 15 Z" fill="url(#accent)"/>
+      </g>
+      <circle cx="0" cy="0" r="4" fill="#00F5D4" filter="url(#neon)"/>
+    </g>
+  </g>
+
+  <!-- Wordmark (dark theme: white text) -->
+  <g transform="translate(360 0)">
+    <text x="0" y="195" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="132" font-weight="800" fill="#F8FAFC" letter-spacing="-4">
+      Mobility
+    </text>
+    <text x="612" y="195" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="132" font-weight="300" fill="#00F5D4" letter-spacing="-4">
+      Shield
+    </text>
+    <text x="4" y="248" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="600" fill="#94A3B8" letter-spacing="6">
+      LIGHTWEIGHT SECURITY SCANNER
+    </text>
+    <rect x="4" y="266" width="132" height="4" rx="2" fill="url(#accent)"/>
+  </g>
+</svg>
