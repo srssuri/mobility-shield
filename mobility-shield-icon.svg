@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Mobility Shield icon">
+  <defs>
+    <!-- Dark background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02040A"/>
+      <stop offset="50%" stop-color="#071224"/>
+      <stop offset="100%" stop-color="#0A1F3D"/>
+    </linearGradient>
+    <radialGradient id="glowBg" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#00F5D4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00F5D4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hl" cx="28%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="100%" stop-color="#00BBF9"/>
+    </linearGradient>
+    <linearGradient id="shieldStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="100%" stop-color="#00BBF9"/>
+    </linearGradient>
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="squircle">
+      <path d="M 256 20 C 392 20, 492 120, 492 256 C 492 392, 392 492, 256 492 C 120 492, 20 392, 20 256 C 20 120, 120 20, 256 20 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <g clip-path="url(#squircle)">
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <rect width="512" height="512" fill="url(#glowBg)"/>
+    <rect width="512" height="512" fill="url(#hl)"/>
+    <!-- subtle grid -->
+    <g opacity="0.07" stroke="#00F5D4" stroke-width="1">
+      <line x1="0" y1="128" x2="512" y2="128"/>
+      <line x1="0" y1="256" x2="512" y2="256"/>
+      <line x1="0" y1="384" x2="512" y2="384"/>
+      <line x1="128" y1="0" x2="128" y2="512"/>
+      <line x1="256" y1="0" x2="256" y2="512"/>
+      <line x1="384" y1="0" x2="384" y2="512"/>
+    </g>
+  </g>
+
+  <g transform="translate(256 256)">
+    <!-- Outer shield (outline only, glowing) -->
+    <path d="M 0 -168
+             L 132 -124
+             C 132 20, 92 132, 0 184
+             C -92 132, -132 20, -132 -124
+             Z"
+          fill="none" stroke="url(#shieldStroke)" stroke-width="3" stroke-linejoin="round" opacity="0.5"/>
+    <!-- Inner shield (filled dark) -->
+    <path d="M 0 -148
+             L 114 -110
+             C 114 12, 78 112, 0 158
+             C -78 112, -114 12, -114 -110
+             Z"
+          fill="#071224" fill-opacity="0.85" stroke="url(#accent)" stroke-width="2" stroke-linejoin="round" filter="url(#softGlow)"/>
+
+    <!-- Scan beam (horizontal, animated feel) -->
+    <line x1="-90" y1="0" x2="90" y2="0" stroke="url(#accent)" stroke-width="2" stroke-linecap="round" opacity="0.9" filter="url(#neon)"/>
+    <!-- motion trails above/below -->
+    <line x1="-60" y1="-28" x2="40" y2="-28" stroke="#00F5D4" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+    <line x1="-40" y1="28" x2="60" y2="28" stroke="#00BBF9" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+
+    <!-- Forward chevron (echoing Mobility-os, scanning direction) -->
+    <g transform="translate(52 0)" filter="url(#neon)">
+      <path d="M -18 -22 L 18 0 L -18 22 Z" fill="url(#accent)"/>
+    </g>
+
+    <!-- Central core dot -->
+    <circle cx="0" cy="0" r="6" fill="#00F5D4" filter="url(#neon)"/>
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#00F5D4" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+</svg
